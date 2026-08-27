@@ -1,0 +1,13 @@
+version: "3.1"
+
+stories:
+  - story: acne consultation
+    steps:
+      - intent: choose_acne
+      - action: utter_ask_acne_state
+      - intent: choose_acne_state
+      - action: utter_ask_category
+      - intent: choose_category
+      - action: utter_ask_price
+      - intent: choose_price
+      - action: action_recommend_products

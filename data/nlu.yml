@@ -1,0 +1,97 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - こんにちは
+      - こんばんは
+      - おはよう
+      - はじめまして
+      - よろしく
+
+  - intent: choose_acne
+    examples: |
+      - ニキビ
+      - にきび
+      - ニキビです
+      - にきびです
+      - ニキビが気になる
+      - にきびが気になる
+      - ニキビに悩んでいます
+      - にきびに悩んでいます
+      - ニキビについて相談したい
+      - 吹き出物が気になる
+
+  - intent: choose_acne_state
+    examples: |
+      - [赤](acne_state)
+      - [赤い](acne_state)
+      - [赤っぽい](acne_state)
+      - [赤ニキビ](acne_state)
+      - [赤いニキビ](acne_state)
+      - [白](acne_state)
+      - [白い](acne_state)
+      - [白っぽい](acne_state)
+      - [白ニキビ](acne_state)
+      - [白いニキビ](acne_state)
+
+  - intent: choose_category
+    examples: |
+      - [化粧水](product_category)
+      - [乳液](product_category)
+      - [美容液](product_category)
+      - [洗顔](product_category)
+      - [洗顔料](product_category)
+
+  - intent: choose_price
+    examples: |
+      - [1000円未満](price_range)
+      - [1000～1999円](price_range)
+      - [1000〜1999円](price_range)
+      - [2000円以上](price_range)
+
+  - synonym: red
+    examples: |
+      - 赤
+      - 赤い
+      - 赤っぽい
+      - 赤ニキビ
+      - 赤いニキビ
+
+  - synonym: white
+    examples: |
+      - 白
+      - 白い
+      - 白っぽい
+      - 白ニキビ
+      - 白いニキビ
+
+  - synonym: lotion
+    examples: |
+      - 化粧水
+
+  - synonym: emulsion
+    examples: |
+      - 乳液
+
+  - synonym: serum
+    examples: |
+      - 美容液
+
+  - synonym: cleanser
+    examples: |
+      - 洗顔
+      - 洗顔料
+
+  - synonym: low
+    examples: |
+      - 1000円未満
+
+  - synonym: middle
+    examples: |
+      - 1000～1999円
+      - 1000〜1999円
+
+  - synonym: high
+    examples: |
+      - 2000円以上
