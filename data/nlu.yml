@@ -46,11 +46,8 @@ nlu:
   - intent: choose_price
     examples: |
       - [1000円未満](price_range)
-      - [1000円以下](price_range)
-      - [1000円くらい](price_range)
-      - [1000円から2000円](price_range)
       - [1000～1999円](price_range)
-      - [2000円くらい](price_range)
+      - [1000〜1999円](price_range)
       - [2000円以上](price_range)
 
   - synonym: red
@@ -85,3 +82,16 @@ nlu:
     examples: |
       - 洗顔
       - 洗顔料
+
+  - synonym: low
+    examples: |
+      - 1000円未満
+
+  - synonym: middle
+    examples: |
+      - 1000～1999円
+      - 1000〜1999円
+
+  - synonym: high
+    examples: |
+      - 2000円以上
