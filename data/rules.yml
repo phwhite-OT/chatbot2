@@ -5,3 +5,8 @@ rules:
     steps:
       - intent: greet
       - action: utter_greet
+
+  - rule: handle fallback
+    steps:
+      - intent: nlu_fallback
+      - action: utter_fallback
