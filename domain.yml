@@ -6,6 +6,7 @@ intents:
   - choose_acne_state
   - choose_category
   - choose_price
+  - nlu_fallback
 
 entities:
   - acne_state
@@ -67,6 +68,9 @@ responses:
           payload: '/choose_price{"price_range":"middle"}'
         - title: "2000円以上"
           payload: '/choose_price{"price_range":"high"}'
+
+  utter_fallback:
+    - text: "ごめん、うまく理解できなかったよ。表示されている選択肢から選んでみてね。"
 
 actions:
   - action_recommend_products
