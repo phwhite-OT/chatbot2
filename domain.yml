@@ -1,0 +1,76 @@
+version: "3.1"
+
+intents:
+  - greet
+  - choose_acne
+  - choose_acne_state
+  - choose_category
+  - choose_price
+
+entities:
+  - acne_state
+  - product_category
+  - price_range
+
+slots:
+  acne_state:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: acne_state
+
+  product_category:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: product_category
+
+  price_range:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: price_range
+
+responses:
+  utter_greet:
+    - text: "初めまして。美容系アシスタントのプチプラ先輩です。何かお悩みはありますか？"
+
+  utter_ask_acne_state:
+    - text: "そっか、ニキビが気になってるんだね。今気になってるニキビは、赤っぽいものと白っぽいもの、どっちが多いかな？"
+      buttons:
+        - title: "赤"
+          payload: '/choose_acne_state{"acne_state":"red"}'
+        - title: "白"
+          payload: '/choose_acne_state{"acne_state":"white"}'
+
+  utter_ask_category:
+    - text: "なるほど。じゃあ次に、今探してるのはどんなアイテムかな？"
+      buttons:
+        - title: "化粧水"
+          payload: '/choose_category{"product_category":"lotion"}'
+        - title: "乳液"
+          payload: '/choose_category{"product_category":"emulsion"}'
+        - title: "美容液"
+          payload: '/choose_category{"product_category":"serum"}'
+        - title: "洗顔"
+          payload: '/choose_category{"product_category":"cleanser"}'
+
+  utter_ask_price:
+    - text: "予算も教えてほしいな。だいたいいくらくらいで考えてる？"
+      buttons:
+        - title: "1000円未満"
+          payload: '/choose_price{"price_range":"low"}'
+        - title: "1000～1999円"
+          payload: '/choose_price{"price_range":"middle"}'
+        - title: "2000円以上"
+          payload: '/choose_price{"price_range":"high"}'
+
+actions:
+  - action_recommend_products
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
